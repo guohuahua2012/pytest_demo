@@ -1,0 +1,37 @@
+# 注释 登录测试用例
+-
+  path: /ucas/user/app/login
+  method: POST
+- # test_01 用例1
+  detail: 正确用户名和密码登录
+  data:
+    telNum: "18198247429"
+    password: "Cm123456"
+  validate:
+    retCode: 0
+    retMsg: "操作成功"
+- # test_02 用例2
+  detail: 正确用户名和空密码
+  data:
+    telNum: "18198247429"
+    password: ""
+  validate:
+    retCode: 1
+    retMsg: "密码不能为空"
+- # test_03 用例3
+  detail: 用户名空和密码不为空
+  data:
+    telNum: ""
+    password: "Cm123456"
+  validate:
+    retCode: 1
+    retMsg: "手机号不能为空"
+- # test_04 用例4
+  detail: 用户名和密码均为空
+  data:
+    telNum: ""
+    password: ""
+  validate:
+    retCode: 1
+    retMsg: "密码不能为空"
+
